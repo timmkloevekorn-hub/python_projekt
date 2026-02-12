@@ -1,0 +1,22 @@
+# Generierte Dokumentation
+docs/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtuelle Umgebung
+.venv/
+venv/
+
+# Datenbank (enthält sensible Passwörter)
+pm_data.json
+
+# IDE
+.vscode/
+.idea/
+
+# Temporäre Dateien
+*.log
+*.tmp

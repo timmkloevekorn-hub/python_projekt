@@ -1,0 +1,41 @@
+# Doxyfile für Passwort-Manager Projekt
+
+# Projekt Informationen
+PROJECT_NAME           = "Passwort Manager"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Ein sicherer Passwort-Manager mit KI-Integration"
+
+# Eingabe
+INPUT                  = .
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+EXCLUDE                = __pycache__
+
+# Python spezifisch
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTENSION_MAPPING      = py=Python
+
+# Was soll extrahiert werden
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Ausgabe
+OUTPUT_DIRECTORY       = docs
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# HTML Einstellungen
+HTML_OUTPUT            = html
+HTML_COLORSTYLE        = LIGHT
+
+# Diagramme
+HAVE_DOT               = NO
+CLASS_DIAGRAMS         = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+# Weitere Optionen
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
