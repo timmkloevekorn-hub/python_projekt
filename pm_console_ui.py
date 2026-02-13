@@ -106,7 +106,7 @@ def list_accounts(manager: AccountManager):
         masked_password = '*' * len(account.password)
         print(f'{index}. Dienst: {account.service}, Benutzername: {account.username}, Kategorie: {account.category}, Passwort: {masked_password}')
 
-    # Erst nach der kompletten Liste fragen
+    # Nach der kompletten Auflistung fragen
     show_password = input(
         '\nPasswort für eine Nummer anzeigen? '
         '(Nummer eingeben oder Enter zum Überspringen): '
@@ -143,13 +143,22 @@ def load_accounts(manager: AccountManager):
 
 #Funktion zum Löschen eines Accounts
 def delete_account(manager: AccountManager):
-    list_accounts(manager)
-    if not manager.accounts:
+    print('\n--- Account löschen ---')
+    
+    accounts = manager.list_accounts()
+    
+    if not accounts:
+        print('Keine Accounts vorhanden.')
         return
+    
+    # Accounts nur mit maskierten Passwörtern auflisten
+    for index, account in enumerate(accounts, start=1):
+        masked_password = '*' * len(account.password)
+        print(f'{index}. Dienst: {account.service}, Benutzername: {account.username}, Kategorie: {account.category}, Passwort: {masked_password}')
     
     while True:
         try:
-            index = int(input('Gib die Nummer des zu löschenden Accounts ein (0 zum Abbrechen): '))
+            index = int(input('\nGib die Nummer des zu löschenden Accounts ein (0 zum Abbrechen): '))
             if index == 0:
                 print('Löschen abgebrochen.')
                 return
